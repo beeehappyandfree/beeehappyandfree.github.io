@@ -46,6 +46,9 @@ const config: Config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/beeehappyandfree/beeehappyandfree.github.io/tree/main/',
+          // Study-friendly features
+          showLastUpdateTime: true,
+          showLastUpdateAuthor: true,
         },
         blog: {
           showReadingTime: true,
@@ -131,8 +134,31 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} Bee Happy and Free. Built with Docusaurus.`,
     },
     prism: {
-      theme: prismThemes.github,
+      theme: prismThemes.github, /* Light theme for better readability */
       darkTheme: prismThemes.dracula,
+      // Study-friendly code highlighting
+      additionalLanguages: ['python', 'bash', 'json', 'yaml', 'typescript'],
+    },
+    // Study-friendly features - Light theme enforced
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: false,
+      respectPrefersColorScheme: false, // Don't follow system preference, always start light
+    },
+    // Better typography
+    docs: {
+      sidebar: {
+        hideable: true,
+        autoCollapseCategories: true,
+      },
+    },
+    // Reading progress indicator
+    announcementBar: {
+      id: 'study-progress',
+      content: '📚 Study Progress: Track your learning journey!',
+      backgroundColor: '#6b7280', /* Gray-500 to match theme */
+      textColor: '#ffffff',
+      isCloseable: true,
     },
   } satisfies Preset.ThemeConfig,
 };

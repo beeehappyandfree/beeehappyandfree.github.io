@@ -6,25 +6,390 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  /* Study-friendly light gray color palette */
+  --ifm-color-primary: #6b7280; /* Gray-500 */
+  --ifm-color-primary-dark: #4b5563; /* Gray-600 */
+  --ifm-color-primary-darker: #374151; /* Gray-700 */
+  --ifm-color-primary-darkest: #1f2937; /* Gray-800 */
+  --ifm-color-primary-light: #9ca3af; /* Gray-400 */
+  --ifm-color-primary-lighter: #d1d5db; /* Gray-300 */
+  --ifm-color-primary-lightest: #f3f4f6; /* Gray-100 */
+  
+  /* Typography improvements */
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(107, 114, 128, 0.1);
+  
+  /* Better spacing for study content */
+  --ifm-line-height-base: 1.7;
+  --ifm-heading-line-height: 1.3;
+  
+  /* Light backgrounds - ensuring everything is light */
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #f9fafb; /* Gray-50 */
+  --ifm-background-color-light: #fafafa;
+  
+  /* Black text for maximum readability */
+  --ifm-color-content: #000000; /* Pure black */
+  --ifm-color-content-secondary: #374151; /* Gray-700 for secondary text */
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #9ca3af; /* Gray-400 for dark mode */
+  --ifm-color-primary-dark: #6b7280; /* Gray-500 */
+  --ifm-color-primary-darker: #4b5563; /* Gray-600 */
+  --ifm-color-primary-darkest: #374151; /* Gray-700 */
+  --ifm-color-primary-light: #d1d5db; /* Gray-300 */
+  --ifm-color-primary-lighter: #e5e7eb; /* Gray-200 */
+  --ifm-color-primary-lightest: #f3f4f6; /* Gray-100 */
+  --docusaurus-highlighted-code-line-bg: rgba(156, 163, 175, 0.2);
+  
+  /* Dark mode background */
+  --ifm-background-color: #111827; /* Gray-900 */
+  --ifm-background-surface-color: #1f2937; /* Gray-800 */
+  --ifm-color-content: #f9fafb; /* Gray-50 */
+  --ifm-color-content-secondary: #d1d5db; /* Gray-300 */
+}
+
+/* Force light background for main content areas */
+body {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.main-wrapper {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.theme-doc-layout {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.theme-doc-sidebar {
+  background-color: #f9fafb;
+}
+
+/* Enhanced typography for study notes */
+.markdown h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #000000;
+}
+
+.markdown h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--ifm-color-primary-lighter);
+  color: #000000;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.markdown h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: #000000;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.markdown h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #000000;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Better paragraph spacing */
+.markdown p {
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+  color: #000000;
+}
+
+/* Enhanced code blocks */
+.markdown pre {
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-primary-lighter);
+  background-color: #f8f9fa !important; /* Light gray background */
+  color: #000000 !important; /* Black text */
+}
+
+.markdown code {
+  background-color: #f8f9fa !important; /* Light gray background */
+  border: 1px solid var(--ifm-color-primary-lighter);
+  border-radius: 4px;
+  padding: 0.125rem 0.25rem;
+  font-size: 0.9em;
+  color: #000000 !important; /* Black text */
+}
+
+/* Fix inline code specifically */
+.markdown :not(pre) > code {
+  background-color: #f8f9fa !important;
+  color: #000000 !important;
+  border: 1px solid #e9ecef;
+  padding: 0.125rem 0.25rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* Fix code blocks with syntax highlighting */
+.markdown pre code {
+  background-color: transparent !important;
+  border: none !important;
+  color: #000000 !important;
+  padding: 0 !important;
+}
+
+/* Override Prism.js dark theme for light mode */
+[data-theme='light'] .prism-code {
+  background-color: #f8f9fa !important;
+  color: #000000 !important;
+}
+
+[data-theme='light'] .token {
+  color: #000000 !important;
+}
+
+/* Ensure mathematical formulas are readable */
+.markdown .math {
+  background-color: #f8f9fa !important;
+  color: #000000 !important;
+  border: 1px solid #e9ecef;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* Better list styling */
+.markdown ul, .markdown ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+  color: #000000;
+}
+
+.markdown li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  color: #000000;
+}
+
+/* Enhanced blockquotes for important notes */
+.markdown blockquote {
+  border-left: 4px solid var(--ifm-color-primary);
+  background-color: var(--ifm-color-primary-lightest);
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.markdown blockquote p {
+  margin-bottom: 0;
+  font-style: italic;
+  color: #374151; /* Gray-700 for blockquotes */
+}
+
+/* Better table styling */
+.markdown table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.markdown table th {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.markdown table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--ifm-color-primary-lighter);
+  color: #000000;
+}
+
+.markdown table tr:nth-child(even) {
+  background-color: var(--ifm-background-surface-color);
+}
+
+/* Study note callouts */
+.study-note {
+  background-color: #fef3c7; /* Amber-100 */
+  border: 1px solid #f59e0b; /* Amber-500 */
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+
+.study-note h4 {
+  color: #92400e; /* Amber-800 */
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.study-note p {
+  color: #000000;
+}
+
+[data-theme='dark'] .study-note {
+  background-color: #451a03; /* Amber-900 */
+  border-color: #f59e0b; /* Amber-500 */
+}
+
+[data-theme='dark'] .study-note h4 {
+  color: #fbbf24; /* Amber-400 */
+}
+
+/* Practice question styling */
+.practice-question {
+  background-color: #f0f9ff; /* Sky-50 */
+  border: 1px solid #0ea5e9; /* Sky-500 */
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+
+.practice-question h4 {
+  color: #0c4a6e; /* Sky-900 */
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.practice-question p {
+  color: #000000;
+}
+
+[data-theme='dark'] .practice-question {
+  background-color: #0c4a6e; /* Sky-900 */
+  border-color: #0ea5e9; /* Sky-500 */
+}
+
+[data-theme='dark'] .practice-question h4 {
+  color: #7dd3fc; /* Sky-300 */
+}
+
+/* Better sidebar styling - FIXING READABILITY ISSUES */
+.theme-doc-sidebar-container {
+  border-right: 1px solid var(--ifm-color-primary-lighter);
+  background-color: #f9fafb;
+}
+
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible {
+  font-weight: 600;
+  color: #000000 !important;
+}
+
+.theme-doc-sidebar-item-link {
+  color: #000000 !important;
+}
+
+/* Fix sidebar menu items */
+.menu__list-item {
+  color: #000000 !important;
+}
+
+.menu__link {
+  color: #000000 !important;
+}
+
+.menu__link--active {
+  color: #000000 !important;
+  font-weight: 600;
+}
+
+.menu__link--sublist {
+  color: #000000 !important;
+}
+
+.menu__list-item-collapsible {
+  color: #000000 !important;
+}
+
+/* Fix table of contents */
+.theme-doc-toc-desktop {
+  background-color: #f9fafb;
+}
+
+.theme-doc-toc-desktop .table-of-contents__link {
+  color: #000000 !important;
+}
+
+.theme-doc-toc-desktop .table-of-contents__link--active {
+  color: #000000 !important;
+  font-weight: 600;
+}
+
+/* Enhanced navigation */
+.navbar {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.navbar__title {
+  color: #000000;
+}
+
+.navbar__item {
+  color: #000000;
+}
+
+/* Better footer */
+.footer {
+  background-color: var(--ifm-color-primary-darkest);
+  color: white;
+}
+
+/* Additional light background elements */
+.theme-doc-toc-desktop {
+  background-color: #f9fafb;
+}
+
+.theme-doc-breadcrumbs {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Ensure all text is black */
+.theme-doc-markdown {
+  color: #000000;
+}
+
+/* Force all text elements to be black */
+* {
+  color: #000000 !important;
+}
+
+/* Exceptions for specific elements that should have different colors */
+.markdown table th,
+.footer,
+[data-theme='dark'] * {
+  color: inherit !important;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .markdown h1 {
+    font-size: 2rem;
+  }
+  
+  .markdown h2 {
+    font-size: 1.75rem;
+  }
+  
+  .markdown h3 {
+    font-size: 1.375rem;
+  }
 }
