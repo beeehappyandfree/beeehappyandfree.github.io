@@ -2,46 +2,50 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Study Notes
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Welcome to my comprehensive study notes! This site serves as a personal knowledge base covering various technical fields with theory, practical implementations, and interview preparation materials.
 
-## Getting Started
+## What You'll Find Here
 
-Get started by **creating a new site**.
+- **Deep Learning**: Theory, mathematics, infrastructure, and interview questions
+- **More fields coming soon...**
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+## Deep Learning Study Notes
 
-### What you'll need
+The deep learning section covers:
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+### 🧠 Theory & Fundamentals
+- Neural network architectures
+- Activation functions and optimization
+- Regularization techniques
+- Loss functions and metrics
 
-## Generate a new site
+### 📐 Mathematics
+- Linear algebra foundations
+- Calculus and gradients
+- Probability and statistics
+- Information theory
 
-Generate a new Docusaurus site using the **classic template**.
+### ⚙️ Infrastructure & Engineering
+- Model deployment strategies
+- Scalability and performance
+- MLOps best practices
+- Hardware considerations
 
-The classic template will automatically be added to your project after you run the command:
+### 💼 Interview Preparation
+- Common interview questions
+- Problem-solving approaches
+- System design scenarios
+- Implementation challenges
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+## How to Use These Notes
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+1. **Start with Theory**: Build a solid foundation
+2. **Practice the Math**: Work through derivations and proofs
+3. **Study Infrastructure**: Understand production considerations
+4. **Test with Interviews**: Reinforce concepts through practice
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+---
 
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+*These notes are continuously updated as I learn and discover new insights. Feel free to use them for your own learning journey!*
