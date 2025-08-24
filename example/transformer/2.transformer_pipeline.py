@@ -18,6 +18,7 @@ raw_inputs = ["I've been waiting to learn about transformers my whole life.",
 ## YOUR SOLUTION HERE ##
 inputs = tokenizer(raw_inputs, padding=True, truncation=True, return_tensors="pt")
 print(inputs)
+
 # Initializing the model
 model = AutoModelForSequenceClassification.from_pretrained(checkpoint)
 
